@@ -1,0 +1,22 @@
+.full-height-scroll{
+  height: 100vh;
+  overflow-y: scroll;
+}
+@media screen and (min-width:760px) {
+  .row{
+    display: column;
+  }
+}
+.demo-chart {
+  height: 250px;
+}
+th{
+  padding: 10px;
+  font-weight: 500;
+}
+td{
+  padding: 10px;
+}
+tbody tr{
+  border-bottom: 1px solid #ededee;
+}

@@ -1,0 +1,170 @@
+<div class="nav">
+  <mat-sidenav-container class="example-container add-sitenav-border-class add" style="background: #3c3b54;">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      <h2 class="PrBg_color">ACME</h2>
+      <div fxLayout="column" fxLayoutAlign="center">
+        <div fxFlex>
+          <mat-nav-list>
+            <ng-container *ngFor="let item of menuItems;let i=index">
+              <a fxLayout="row" fxLayoutGap="10px" mat-list-item class="menuList sidenav-button" id={{item.text+i}}
+                (click)="SideNavigationActive(item.text+i)" [routerLink]="'/'+item">
+                <i class="{{item.icon}}" id="sidenav-icon"></i>
+                <span style="margin-left: 15px;">
+                  {{item.text | titlecase}}
+                </span>
+              </a>
+            </ng-container>
+
+          </mat-nav-list>
+        </div>
+      </div>
+
+    </mat-sidenav>
+
+    <mat-sidenav-content class="border-radius-formaincontent" style="background-color: #3c3b54;overflow: hidden;">
+      <div class="column">
+        <div class="row">
+          <div style="padding: 20px;border-bottom:1px solid gray;" class="row bg-white">
+            <div class="col-9">
+
+              <div style="display: flex;align-items: center;">
+                <p (click)="sidenavToggleStyle()" style="margin: 0px;line-height: 0;"><mat-icon (click)="sidenav.toggle()">menu</mat-icon></p>
+                <i class="fa-solid mobile-hide fa-magnifying-glass" style="padding: 0px 10px;margin-left: 3vw;"></i>
+                <input type="text" class=" mobile-hide input-transparent" style="width: 25vw;"
+                  placeholder="Search transaction, invoice or help">
+              </div>
+            </div>
+            <div class="col-3">
+              <div style="display: flex;justify-content: end;align-items: center;">
+                <i class="fa-solid fa-magnifying-glass mobile-version-display"
+                  style="padding: 0px 10px;margin-left: 3vw;"></i>
+                <i [matMenuTriggerFor]="notificationMenu" class="fa-regular fa-bell" style="margin-right: 10px;"></i>
+                <div [matMenuTriggerFor]="profileMenu" style="display: flex;align-items: center;position: relative;">
+                  <span class="mobile-version-profile-display-none margin0-20" style="gap: 10px;">
+                    <p style="margin:0px">John Doe</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                  </span>
+
+                  <img class="img" src="../../assets/images/profile/profile-pic-01.jpg" alt="">
+
+                  <mat-menu #notificationMenu="matMenu">
+                    <div fxLayout="row" fxLayoutGap="10px" style="padding:10px;">
+                      <div fxLayout="column" fxFlex="10" fxLayoutAlign="center center">
+                        <img class="img" src="../../assets/images/profile/profile-pic-02.jpg" alt="">
+                      </div>
+                      <div fxLayout="column" fxFlex="90">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                          <div class="notificaion-name">Bavid Kames</div>
+                          <div class="notification-time">2 min ago</div>
+                        </div>
+                        <div fxLayout="row" class="notificaion-msg">
+                          <span>Assigned you on the call with Sara</span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="10px" style="padding:10px;">
+                      <div fxLayout="column" fxFlex="10" fxLayoutAlign="center center">
+                        <img class="img" src="../../assets/images/profile/profile-pic-05.jpg" alt="">
+                      </div>
+                      <div fxLayout="column" fxFlex="90">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                          <div class="notificaion-name">Alexa Marry</div>
+                          <div class="notification-time">5 min ago</div>
+                        </div>
+                        <div fxLayout="row" class="notificaion-msg">
+                          <span>Marked the task New UI as done</span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="10px" style="padding:10px;">
+                      <div fxLayout="column" fxFlex="10" fxLayoutAlign="center center">
+                        <img class="img" src="../../assets/images/profile/profile-pic-06.jpg" alt="">
+                      </div>
+                      <div fxLayout="column" fxFlex="90">
+                        <div fxLayout="row" fxLayoutAlign="space-between center">
+                          <div class="notificaion-name">Eva Maria</div>
+                          <div class="notification-time">10 min ago</div>
+                        </div>
+                        <div fxLayout="row" class="notificaion-msg">
+                          <span>Added a new comment on Sales task</span>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                      <button fxLayoutAlign="center center" mat-menu-item>
+                        <span class="show-more">Show More</span>
+                      </button>
+                    </div>
+                  </mat-menu>
+
+                  <mat-menu #profileMenu="matMenu">
+                    <button mat-menu-item>
+                      <i class="fa-solid fa-user" style="margin-right: 20px;"></i>
+                      <span>My Profile</span>
+                    </button>
+                    <button mat-menu-item>
+                      <i class="fa-solid fa-square-poll-horizontal" style="margin-right: 20px;"></i>
+                      <span>Billing</span>
+                    </button>
+                    <button mat-menu-item>
+                      <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 20px;"></i>
+                      <span>Logout</span>
+                    </button>
+                  </mat-menu>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="row"> <app-dashboard></app-dashboard></div>
+      </div>
+      <!-- <div style="padding: 20px;border-bottom:1px solid gray;" class="row bg-white">
+      <div class="col-9">
+
+    <div style="display: flex;align-items: center;">
+      <p style="margin: 0px;line-height: 0;"><mat-icon (click)="sidenav.toggle()">menu</mat-icon></p>
+      <i class="fa-solid fa-magnifying-glass" style="padding: 0px 10px;margin-left: 3vw;"></i>
+      <input type="text" class="input-transparent" style="width: 25vw;" placeholder="Search transaction, invoice or help">
+    </div>
+    </div>
+      <div class="col-3">
+        <div style="display: flex;justify-content: end;align-items: center;">
+          <i class="fa-solid fa-magnifying-glass mobile-version-display" style="padding: 0px 10px;margin-left: 3vw;"></i>
+          <i class="fa-regular fa-bell" style="margin-right: 10px;"></i>
+          <div (click)="toggleProfileDetails()" style="display: flex;align-items: center;position: relative;">
+            <span class="mobile-version-profile-display-none margin0-20" style="gap: 10px;">
+              <p style="margin:0px">John Doe</p>
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+
+            <img style="width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            object-fit: cover;" src="../../assets/images/profile/profile-pic-01.jpg" alt="">
+
+<div class="profile-details" style="position: absolute;
+top: 185%;
+right: 0;
+padding:20px;
+background: white;
+border-radius: 12px;">
+  <div class="flex"> <i class="fa-solid fa-user" style="margin-right: 20px;"></i> <p> My Profile</p></div>
+  <div class="flex"> <i class="fa-solid fa-square-poll-horizontal" style="margin-right: 20px;"></i> <p> Billing</p></div>
+  <div class="flex"> <i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 20px;"></i> <p class="m-0"> Logout</p></div>
+</div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div> -->
+
+
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

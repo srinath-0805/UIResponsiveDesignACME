@@ -1,0 +1,99 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+h1{
+  color: #4f4e68;
+  font-weight: 500 !important;
+  letter-spacing: 10px;
+}
+.PrBg_color{
+  background-color: #3C3B54;
+  }
+  .sBg_color{
+  background-color: #43425d;
+  }
+  .bg-white{
+    background-color: white;
+  }
+  .p_color{
+  color: #3C3B54;
+  }
+  .s_color{
+  color: #43425d;
+  }
+  .white_color{
+    color:white
+  }
+  .black_color{
+    color: rgb(23, 23, 23);
+  }
+  .container{
+    padding:20px;
+  }
+.input-transparent{
+  border: none;
+  background: transparent;
+  padding: 5px 10px;
+
+}
+input.input-transparent:focus-visible{
+  outline: none !important;
+}
+
+
+i{
+  font-size: 18px;
+  cursor: pointer;
+}
+.mobile-version-profile-display-none{
+  display: flex;
+}
+.mobile-version-display{
+  display: none;
+}
+.margin0-20{
+  margin: 0px 20px;
+}
+@media (max-width:600px) {
+  .mobile-version-profile-display-none{
+    display: none;
+  }
+  .mobile-version-display{
+    display: initial;
+  }
+}
+.flex{
+  display: flex;
+}
+.m-0{
+  margin: 0px !important;
+}
+button.btn-pr{
+  float: right;
+  padding: 7px 10px;
+  border: none;
+  background: #6763e3;
+  color: white;
+  border-radius: 5px;
+  span{
+    padding: 3px 7px;
+    border-radius: 100%;
+    background-color: #514ddc;
+  }
+}
+.card-box{
+  padding: 20px;
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0px 0px 30px #3c3b5417;
+}
+
+.add-sitenav-border-class .border-radius-formaincontent{
+  border-radius: 37px 0px 0px 0px;
+  transition: all 0.8s ease-in-out;
+}
+.add-sitenav-border-class.add .border-radius-formaincontent{
+border-radius: 0px;
+}
